@@ -1,5 +1,5 @@
 {
-  "name": "ts-nextjs-tailwind-starter",
+  "name": "wallet-ninja-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -55,7 +55,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "eslint --max-warnings=0",
+      "eslint --max-warnings=2",
       "prettier -w"
     ],
     "**/*.{json,css,scss,md}": [

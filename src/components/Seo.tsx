@@ -8,7 +8,7 @@ const defaultMeta = {
   url: 'https://walletninja.me',
   type: 'website',
   robots: 'nofollow, noindex',
-  image: `https://walletninja.me/api/og?title=WalletNinja`,
+  image: `/api/og?title=WalletNinja`,
 };
 
 type SeoProps = {
@@ -26,7 +26,7 @@ export default function Seo(props: SeoProps) {
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
 
-  meta['image'] = `https://walletninja.me/api/og?title=${meta.title}`;
+  meta['image'] = `/api/og?title=${meta.title}`;
 
   return (
     <Head>
