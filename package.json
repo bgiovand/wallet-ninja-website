@@ -18,6 +18,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@vercel/og": "^0.0.15",
     "clsx": "^1.2.1",
     "next": "^12.3.1",
     "react": "^18.2.0",

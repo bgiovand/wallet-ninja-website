@@ -1,4 +1,4 @@
-const RAINBOW_BUTTON_ID = 'button';
+const RAINBOW_BUTTON_ID = 'confetti';
 
 interface Particle {
   element: HTMLSpanElement;
