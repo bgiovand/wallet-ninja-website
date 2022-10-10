@@ -12,7 +12,6 @@ import Seo from '@/components/Seo';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-import Vercel from '~/svg/Vercel.svg';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -31,12 +30,13 @@ export default function HomePage() {
       <main id='button'>
         <section className='bg-white'>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
-            <Vercel className='text-5xl' />
-            <h1 className='mt-4'>Wallet Ninja</h1>
+            <h1 className='mt-4'>
+              🥷💰 <br /> Wallet Ninja
+            </h1>
 
             <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()}{' '}
-              <UnderlineLink href='https://walletninja.com'>
+              <UnderlineLink href='https://walletninja.me'>
                 Wallet Ninja
               </UnderlineLink>
             </footer>
