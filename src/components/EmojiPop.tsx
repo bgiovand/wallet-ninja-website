@@ -69,7 +69,7 @@ class Fountain {
 
   addHandlers() {
     const isTouchInteraction =
-      'ontouchstart' in window || navigator.msMaxTouchPoints;
+      'ontouchstart' in window || navigator.maxTouchPoints;
 
     const tap = isTouchInteraction ? 'touchstart' : 'mousedown';
     const tapCancel = isTouchInteraction ? 'touchcancel' : 'contextmenu';
