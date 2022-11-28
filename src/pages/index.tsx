@@ -213,20 +213,20 @@ export default function HomePage() {
           </div> */}
         </header>
 
-        <section id='hero' className='p-20'>
+        <section id='hero' className='py-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
-            <h2 className='mb-16 mt-10 text-6xl'>
-              <span className='mb-6 block text-8xl'>💰</span>
-              Recover your coins
+            <h2 className='mb-10 mt-10 text-6xl'>
+              <span className='mb-8 block text-8xl'>💰</span>
+              Recover Your Coins
             </h2>
-            <p className='mb-5 w-8/12 text-2xl font-semibold'>
+            <h3 className=' mb-28 w-8/12 text-3xl font-semibold'>
               WalletNinja is a team of hackers and crypto enthusiasts with a
               passion for recovering lost crypto.
+            </h3>
+            <p className='mt-4 mb-2 w-8/12 text-2xl'>
+              We've recovered over $3,000,000 in crypto for our clients.
             </p>
-            <p className='mt-4 mb-20 w-8/12 text-2xl'>
-              We've recovered over $3,000,000 in crypto for our clients. Let us
-              do the same for you.
-            </p>
+            <p className='mb-10 w-8/12 text-2xl'>Let us do the same for you.</p>
 
             <div className='mb-20 mt-10'>
               <Link
@@ -239,17 +239,17 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-slate-50 p-20'>
+        <section className='bg-slate-50 py-20'>
           <div
             className='layout flex flex-col items-center justify-center text-center'
             id='values'
           >
             <h2 className='mt-4'>Our Values</h2>
-            <ul className='flex flex-col flex-wrap items-baseline justify-center text-center align-top md:flex-row'>
+            <ul className='flex flex-col flex-wrap items-baseline justify-center text-center md:flex-row'>
               {values.map((item, index) => (
                 <li
                   key={index}
-                  className='align-center flex flex-col justify-around p-5 md:w-1/3 '
+                  className='align-center flex w-full flex-col justify-around p-5 md:w-1/3 '
                 >
                   <span className='m-5 text-6xl'>{item.icon}</span>
                   <h3 className='mb-2'>{item.title}</h3>
@@ -260,14 +260,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className=' bg-slate-200 p-20' id='testimonials'>
+        <section className=' bg-slate-200 py-20' id='testimonials'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Testimonials</h2>
             <ul className='m-10 mt-4 flex flex-row flex-wrap items-center justify-center text-center '>
               {testimonials.map((item, index) => (
                 <li
                   key={index}
-                  className='flex w-4/12 flex-col items-center px-10'
+                  className='flex flex-col items-center px-10 md:w-4/12'
                 >
                   <Image
                     src={`/images/${item.icon}.svg`}
@@ -295,7 +295,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-white p-20'>
+        <section className='bg-white py-20'>
           <div className=' layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Our Process</h2>
             <ul className='mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
@@ -322,7 +322,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-white p-20'>
+        <section className='bg-white py-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Our Specialities</h2>
             <ul className='mt-4'>
@@ -367,14 +367,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='p-20'>
+        <section className='py-20' id='faq'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>FAQs</h2>
             <ul className=' m-auto mt-4 flex flex-col items-center justify-center'>
               {faqs.map((item, index) => (
                 <li
                   key={index}
-                  className='flex w-8/12 flex-col items-center pb-10'
+                  className='flex flex-col items-center pb-10 md:w-8/12'
                 >
                   <h3 className='mb-3'>{item.question}</h3>
                   <p>{item.answer}</p>
@@ -384,14 +384,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-white p-20'>
+        <section className='bg-white py-20'>
           <div className='layout flex flex-col justify-between text-center align-text-top'>
             <h2 className='m-4'>Why choose us?</h2>
-            <ul className=' flex flex-row '>
+            <ul className=' flex flex-col md:flex-row '>
               {advantages.map((item, index) => (
                 <li
                   key={index}
-                  className='flex w-1/3 flex-col items-center p-4'
+                  className='flex flex-col items-center p-4 md:w-1/3'
                 >
                   <h3 className='h-16 w-16 rounded-xl bg-slate-400 text-4xl leading-[1.7] text-slate-100'>
                     {index + 1}
@@ -403,7 +403,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id='contact-form p-20'>
+        <section id='contact-form' className='pb-40 pt-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Contact Us</h2>
             <p className='mt-4'>
