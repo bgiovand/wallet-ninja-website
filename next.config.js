@@ -4,6 +4,20 @@ module.exports = {
     dirs: ['src'],
   },
 
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'x-robots-tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+    ];
+  },
+
   reactStrictMode: true,
 
   // Uncoment to add domain whitelist
