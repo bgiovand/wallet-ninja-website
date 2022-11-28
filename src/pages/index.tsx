@@ -193,17 +193,22 @@ export default function HomePage() {
     <Layout>
       <Seo />
 
-      <main id='confetti'>
-        <header className='header flex px-10'>
+      <main id='confetti' className='min-h-full bg-gray-100'>
+        <header className='flex flex-row  items-end justify-between px-10'>
           <h1 className='mt-10'>🥷 WalletNinja </h1>
-
-          <div className='flex flex-col items-end'>
+          <Link
+            href='#contact'
+            className='rounded  bg-blue-500 p-5 px-10 font-bold text-white transition duration-300 hover:scale-105 hover:cursor-pointer hover:border-black hover:bg-black hover:font-bold hover:text-white hover:opacity-75 hover:shadow-lg'
+          >
+            Contact Us
+          </Link>
+          {/* <div className='flex flex-col items-end'>
             <ul id='navigation' className='flex'>
               <li className='mr-4'>
                 <Link href='/'>Home</Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </header>
 
         <section id='hero' className='p-20'>
@@ -219,11 +224,10 @@ export default function HomePage() {
               We've recovered over $3,000,000 in crypto for our clients.
             </p>
 
-            {/* Contact us button that jumps to contact form */}
             <div className='mt-10'>
               <Link
                 href='#contact'
-                className='rounded  bg-blue-500 p-5 px-6 font-bold text-white transition duration-300 hover:scale-105 hover:cursor-pointer hover:border-black hover:bg-black hover:font-bold hover:text-white hover:opacity-75 hover:shadow-lg'
+                className='rounded bg-blue-500  p-6 px-8 text-2xl font-bold text-white transition duration-300 hover:scale-105 hover:cursor-pointer hover:border-black hover:bg-black hover:font-bold hover:text-white hover:opacity-75 hover:shadow-lg'
               >
                 Recover Your Crypto
               </Link>
