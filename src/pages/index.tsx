@@ -11,13 +11,15 @@ export default function HomePage() {
   const testimonials = [
     {
       quote: 'I got my crypto back! Thank you so much!',
-      blockchain: 'ethereum',
-      type: 'Pre-sale',
+      blockchain: 'ETH',
+      icon: 'ethereum',
+      type: 'Pre-sale Wallet',
       amount: '820',
     },
     {
       quote: 'I got my crypto back! Thank you so much! ',
-      blockchain: 'bitcoin',
+      blockchain: 'BTC',
+      icon: 'bitcoin',
       type: 'Blockchain.com',
       amount: '22',
     },
@@ -41,37 +43,37 @@ export default function HomePage() {
       title: 'Screen',
       description:
         'Even if you think all is lost… reach out! We fancy ourselves digital detectives / hackers and see obstacles as challenges — while we won’t make any promises most times what seems impossible, is possible. We like to build trust and do screening as a video call so we can put faces to names. We understand the gravity of you having to provide us, relative strangers, with private valuable information so it’s important to build rapport.',
-      icon: '/images/process/screen.svg',
+      icon: '🪟',
     },
     {
       title: 'Discovery',
       description:
         'Once we have determined initial viability we can dive deeper by gathering as much information as possible. No morsel is too small or insignificant when it comes to this stage. We’re kind of like a ghost writer to the story of your lost wallet.',
-      icon: '/images/process/discovery.svg',
+      icon: '🔭',
     },
     {
       title: 'Contract',
       description:
         'We send a human readable legal contract for the benefit of both parties.',
-      icon: '/images/process/contract.svg',
+      icon: '📝',
     },
     {
       title: 'Work',
       description:
         'We begin our pass-war using the many proprietary tools and processes we have developed.',
-      icon: '/images/process/battle.svg',
+      icon: '💼',
     },
     {
       title: 'Feedback',
       description:
         "The unfortunate thing about password or private key recovery is the inability to see or track any progress. Binary by definition, it's either solved or isn't. However, we still like to maintain regular communication so you know what’s going on and there’s always hope we may trigger additional pertinent information.",
-      icon: '/images/process/feedback.svg',
+      icon: '📢',
     },
     {
       title: 'Solved!',
       description:
         "We did it! We'll send your recovered coins to your new wallet and you can finally breathe a sigh of relief.",
-      icon: '/images/process/feedback.svg',
+      icon: '🎉',
     },
   ];
 
@@ -213,18 +215,20 @@ export default function HomePage() {
 
         <section id='hero' className='p-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
-            <h2 className='mt-4 text-6xl'>
-              <span className='block text-8xl'>💰</span> Recover your coins
+            <h2 className='mb-16 mt-10 text-6xl'>
+              <span className='mb-6 block text-8xl'>💰</span>
+              Recover your coins
             </h2>
-            <p className='mt-4 text-2xl font-semibold'>
+            <p className='mb-5 w-8/12 text-2xl font-semibold'>
               WalletNinja is a team of hackers and crypto enthusiasts with a
               passion for recovering lost crypto.
             </p>
-            <p className='mt-4 text-2xl'>
-              We've recovered over $3,000,000 in crypto for our clients.
+            <p className='mt-4 mb-20 w-8/12 text-2xl'>
+              We've recovered over $3,000,000 in crypto for our clients. Let us
+              do the same for you.
             </p>
 
-            <div className='mt-10'>
+            <div className='mb-20 mt-10'>
               <Link
                 href='#contact'
                 className='rounded bg-blue-500  p-6 px-8 text-2xl font-bold text-white transition duration-300 hover:scale-105 hover:cursor-pointer hover:border-black hover:bg-black hover:font-bold hover:text-white hover:opacity-75 hover:shadow-lg'
@@ -235,7 +239,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section>
+        <section className='bg-slate-50 p-20'>
           <div
             className='layout flex flex-col items-center justify-center text-center'
             id='values'
@@ -256,7 +260,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-white' id='testimonials'>
+        <section className=' bg-slate-200 p-20' id='testimonials'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Testimonials</h2>
             <ul className='m-10 mt-4 flex flex-row flex-wrap items-center justify-center text-center '>
@@ -266,30 +270,32 @@ export default function HomePage() {
                   className='flex w-4/12 flex-col items-center px-10'
                 >
                   <Image
-                    src={`/images/${item.blockchain}.svg`}
+                    src={`/images/${item.icon}.svg`}
                     width={20}
                     height={20}
                     alt=''
-                    className='h-10 w-10 rounded-full  bg-gray-200 p-2'
+                    className='mb-4 h-10 w-10  rounded-full bg-slate-100 p-2'
                   />
-                  <p className="relative my-3 text-2xl font-light italic before:absolute before:-top-2 before:-left-2 before:-z-10 before:block before:-translate-x-0 before:scale-[4] before:text-gray-400 before:opacity-20 before:content-['❝']">
-                    {item.quote}
-                  </p>
 
-                  <span>{`${item.amount}`}</span>
-                  <div className='font-bold '>
-                    <div className='capitalize'>{item.blockchain}</div>
-                    <div className=' ml-2 rounded-md bg-gray-300 px-2 py-1 text-xs font-normal text-gray-900'>
+                  <div className=''>
+                    <div className='mb-2 inline-block pr-1'>{`${item.amount}`}</div>
+                    <div className='inline-block capitalize'>
+                      {item.blockchain}
+                    </div>
+                    <div className=' mb-1 rounded-md bg-slate-400 px-2 py-1 text-xs font-normal text-gray-100'>
                       {item.type}
                     </div>
                   </div>
+                  <p className="relative my-3 text-2xl font-light italic before:absolute before:-top-2 before:-left-2 before:-z-10 before:block before:-translate-x-0 before:scale-[4] before:text-gray-400 before:opacity-20 before:content-['❝']">
+                    {item.quote}
+                  </p>
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        <section className='bg-white'>
+        <section className='bg-white p-20'>
           <div className=' layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Our Process</h2>
             <ul className='mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
@@ -298,7 +304,7 @@ export default function HomePage() {
                   key={index}
                   className='flex flex-col items-center rounded-lg border border-gray-200 p-4 text-center shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-md'
                 >
-                  <Image
+                  {/* <Image
                     src={
                       item.icon ? item.icon : '/images/process/placeholder.svg'
                     }
@@ -306,10 +312,9 @@ export default function HomePage() {
                     height={100}
                     alt=''
                     className='h-20 w-20'
-                  />
-                  <h3>
-                    {`${index + 1}.`} {item.title}
-                  </h3>
+                  /> */}
+                  <span className='m-5 text-6xl'>{item.icon}</span>
+                  <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </li>
               ))}
@@ -317,7 +322,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-white'>
+        <section className='bg-white p-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Our Specialities</h2>
             <ul className='mt-4'>
@@ -362,13 +367,16 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section>
+        <section className='p-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>FAQs</h2>
-            <ul className='mt-4'>
+            <ul className=' m-auto mt-4 flex flex-col items-center justify-center'>
               {faqs.map((item, index) => (
-                <li key={index} className='flex flex-col items-center'>
-                  <h3>{item.question}</h3>
+                <li
+                  key={index}
+                  className='flex w-8/12 flex-col items-center pb-10'
+                >
+                  <h3 className='mb-3'>{item.question}</h3>
                   <p>{item.answer}</p>
                 </li>
               ))}
