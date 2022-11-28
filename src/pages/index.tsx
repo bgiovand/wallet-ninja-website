@@ -458,7 +458,7 @@ export default function HomePage() {
                   <textarea
                     name='message'
                     id='message'
-                    rows='5'
+                    rows={5}
                     className='mt-2 rounded border border-gray-300 p-2'
                   />
                 </div>
