@@ -384,13 +384,18 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className='bg-white'>
-          <div className='layout justify-center1️⃣ flex flex-col items-center'>
+        <section className='bg-white p-20'>
+          <div className='layout flex flex-col justify-between text-center align-text-top'>
             <h2 className='m-4'>Why choose us?</h2>
-            <ul className=' flex flex-col items-baseline justify-center align-top'>
+            <ul className=' flex flex-row '>
               {advantages.map((item, index) => (
-                <li key={index} className='m-auto mb-5 w-5/12'>
-                  <h3>{index + 1}</h3>
+                <li
+                  key={index}
+                  className='flex w-1/3 flex-col items-center p-4'
+                >
+                  <h3 className='h-16 w-16 rounded-xl bg-slate-400 text-4xl leading-[1.7] text-slate-100'>
+                    {index + 1}
+                  </h3>
                   <h3 className=''>{item}</h3>
                 </li>
               ))}
@@ -398,7 +403,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id='contact-form'>
+        <section id='contact-form p-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
             <h2 className='mt-4'>Contact Us</h2>
             <p className='mt-4'>
