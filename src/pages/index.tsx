@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 
 import Fountain from '@/components/EmojiPop';
@@ -12,7 +13,7 @@ export default function HomePage() {
       quote: 'I got my crypto back! Thank you so much!',
       blockchain: 'ethereum',
       type: 'Pre-sale',
-      amount: '1,000',
+      amount: '820',
     },
     {
       quote: 'I got my crypto back! Thank you so much! ',
@@ -64,6 +65,12 @@ export default function HomePage() {
       title: 'Feedback',
       description:
         "The unfortunate thing about password or private key recovery is the inability to see or track any progress. Binary by definition, it's either solved or isn't. However, we still like to maintain regular communication so you know what’s going on and there’s always hope we may trigger additional pertinent information.",
+      icon: '/images/process/feedback.svg',
+    },
+    {
+      title: 'Solved!',
+      description:
+        "We did it! We'll send your recovered coins to your new wallet and you can finally breathe a sigh of relief.",
       icon: '/images/process/feedback.svg',
     },
   ];
@@ -137,7 +144,7 @@ export default function HomePage() {
     {
       question: 'How long does it take?',
       answer:
-        'It depends on the complexity of the case. We have solved some in a few hours and others in a few months. We will always be transparent about the time frame and will give you an estimate before we begin.',
+        'It depends on the complexity of the case. We have solved some in a few hours and others in a few months. We will always be transparent about the time frame and will give you our best estimate before we begin.',
     },
     {
       question: 'What if I don’t have the original wallet?',
@@ -147,29 +154,31 @@ export default function HomePage() {
     {
       question: 'How do i know i can trust you?',
       answer:
-        "The short and honest answer is, you can't. The long answer is we hope our past work speaks for itself. We have a lot of experience and a lot of satisfied customers. We are also happy to provide references and we can even do a video call to put faces to names.",
+        'We hope our past work speaks for itself in this regard. We have a lot of experience and a lot of satisfied customers. We are also happy to provide personal references and prefer video calls to put faces to names.',
     },
   ];
 
   const advantages = [
-    "We have a quiver of open source software we've modified specifically for cracking crypto wallets",
-    'We own our hardware so your keys never leave our possession',
-    'We write or modify software for each use case',
-    "We have a background in OPSec and a strong understanding of the psychology behind what goes into not only making a password, but what's recollecting or missed about old forgotten ones.",
+    'We own our hardware so your keys never leave our possession.',
+    'We write and modify software for each use case and use artificial intelligence to speed up the process.',
+    'We have a background in Operational Security (OPSec) and a strong understanding of the psychology behind what goes into not only making a password, but how to recollect old forgotten ones.',
   ];
 
   const values = [
     {
+      icon: '👀',
       title: 'Privacy',
       description:
         'We always maintain the privacy of our clients and their coins',
     },
     {
+      icon: '🔒',
       title: 'Security',
       description:
         'We run our own local hardware with a background in OPSec for large billion dollar companies',
     },
     {
+      icon: '😼',
       title: 'Curiosity',
       description:
         'We are fascinated by the cross section of psychology and tech',
@@ -185,19 +194,94 @@ export default function HomePage() {
       <Seo />
 
       <main id='confetti'>
-        <section className='p-20'>
-          <div className='layout flex flex-col items-center justify-center text-center'>
-            <h1 className='mt-4 text-9xl'>🥷💰</h1>
-            <h1 className='mt-10'>Wallet Ninja</h1>
+        <header className='header flex px-10'>
+          <h1 className='mt-10'>🥷 WalletNinja </h1>
+
+          <div className='flex flex-col items-end'>
+            <ul id='navigation' className='flex'>
+              <li className='mr-4'>
+                <Link href='/'>Home</Link>
+              </li>
+            </ul>
           </div>
+        </header>
+
+        <section id='hero' className='p-20'>
           <div className='layout flex flex-col items-center justify-center text-center'>
-            <h2 className='mt-4'>We recover your lost crypto</h2>
-            <p className='mt-4 text-2xl'>
-              We are a team of hackers and crypto enthusiasts who have a passion
-              for recovering lost crypto. We have a deep understanding of the
-              inner workings of the most popular crypto wallets and how they
-              work.
+            <h2 className='mt-4 text-6xl'>
+              <span className='block text-8xl'>💰</span> Recover your coins
+            </h2>
+            <p className='mt-4 text-2xl font-semibold'>
+              WalletNinja is a team of hackers and crypto enthusiasts with a
+              passion for recovering lost crypto.
             </p>
+            <p className='mt-4 text-2xl'>
+              We've recovered over $3,000,000 in crypto for our clients.
+            </p>
+
+            {/* Contact us button that jumps to contact form */}
+            <div className='mt-10'>
+              <Link
+                href='#contact'
+                className='rounded  bg-blue-500 p-5 px-6 font-bold text-white transition duration-300 hover:scale-105 hover:cursor-pointer hover:border-black hover:bg-black hover:font-bold hover:text-white hover:opacity-75 hover:shadow-lg'
+              >
+                Recover Your Crypto
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div
+            className='layout flex flex-col items-center justify-center text-center'
+            id='values'
+          >
+            <h2 className='mt-4'>Our Values</h2>
+            <ul className='flex flex-col flex-wrap items-baseline justify-center text-center align-top md:flex-row'>
+              {values.map((item, index) => (
+                <li
+                  key={index}
+                  className='align-center flex flex-col justify-around p-5 md:w-1/3 '
+                >
+                  <span className='m-5 text-6xl'>{item.icon}</span>
+                  <h3 className='mb-2'>{item.title}</h3>
+                  <p>{item.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className='bg-white' id='testimonials'>
+          <div className='layout flex flex-col items-center justify-center text-center'>
+            <h2 className='mt-4'>Testimonials</h2>
+            <ul className='m-10 mt-4 flex flex-row flex-wrap items-center justify-center text-center '>
+              {testimonials.map((item, index) => (
+                <li
+                  key={index}
+                  className='flex w-4/12 flex-col items-center px-10'
+                >
+                  <Image
+                    src={`/images/${item.blockchain}.svg`}
+                    width={20}
+                    height={20}
+                    alt=''
+                    className='h-10 w-10 rounded-full  bg-gray-200 p-2'
+                  />
+                  <p className="relative my-3 text-2xl font-light italic before:absolute before:-top-2 before:-left-2 before:-z-10 before:block before:-translate-x-0 before:scale-[4] before:text-gray-400 before:opacity-20 before:content-['❝']">
+                    {item.quote}
+                  </p>
+
+                  <span>{`${item.amount}`}</span>
+                  <div className='font-bold '>
+                    <div className='capitalize'>{item.blockchain}</div>
+                    <div className=' ml-2 rounded-md bg-gray-300 px-2 py-1 text-xs font-normal text-gray-900'>
+                      {item.type}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -289,59 +373,13 @@ export default function HomePage() {
         </section>
 
         <section className='bg-white'>
-          <div className='layout flex flex-col items-center justify-center text-center'>
-            <h2 className='mt-4'>Why choose us?</h2>
-            <ul className='mt-4'>
+          <div className='layout justify-center1️⃣ flex flex-col items-center'>
+            <h2 className='m-4'>Why choose us?</h2>
+            <ul className=' flex flex-col items-baseline justify-center align-top'>
               {advantages.map((item, index) => (
-                <li key={index} className='flex flex-col items-center'>
-                  <h3 className=' '>{item}</h3>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <div className='layout flex flex-col items-center justify-center text-center'>
-            <h2 className='mt-4'>Our Values</h2>
-            <ul className=' mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-              {values.map((item, index) => (
-                <li key={index} className='flex flex-col items-center'>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className='bg-white' id='testimonials'>
-          <div className='layout flex flex-col items-center justify-center text-center'>
-            <h2 className='mt-4'>Testimonials</h2>
-            <ul className='m-10 mt-4 flex flex-row flex-wrap items-center justify-center text-center '>
-              {testimonials.map((item, index) => (
-                <li
-                  key={index}
-                  className='flex w-4/12 flex-col items-center px-10'
-                >
-                  <span className='before:conent-["“"] mb-5 text-2xl italic'>
-                    {item.quote}
-                  </span>
-                  <Image
-                    src={`/images/${item.blockchain}.svg`}
-                    width={20}
-                    height={20}
-                    alt=''
-                    className='h-10 w-10 rounded-full  bg-gray-200 p-2'
-                  />
-                  <div className='font-bold capitalize'>
-                    <span className='after:content-["*"]'>
-                      {item.blockchain}
-                    </span>
-                    <span className=''>{item.type}</span>
-                  </div>
-
-                  <span>{`${item.amount}`}</span>
+                <li key={index} className='m-auto mb-5 w-5/12'>
+                  <h3>{index + 1}</h3>
+                  <h3 className=''>{item}</h3>
                 </li>
               ))}
             </ul>
